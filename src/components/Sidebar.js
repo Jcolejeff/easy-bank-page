@@ -1,28 +1,33 @@
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 import useGlobalContext from "../context";
-
+import logo from "../images/logo.svg";
 const Sidebar = () => {
 	const { isSidebarOpen, closeSidebar } = useGlobalContext();
 
 	return (
 		<SidebarContainer>
 			<aside
-				className={`${isSidebarOpen ? "sidebar show-sidebar" : " sidebar"}`}
+				className={`${
+					isSidebarOpen ? "sidebar-wrapper show" : " sidebar-wrapper"
+				}`}
 			>
 				<div className="sidebar-header">
-					<img src="" alt="" className="logo" />
+					<div className="sidebar-header-logo">
+						<img src={logo} alt="logo" />
+					</div>
 					<button type="button" className="close-btn" onClick={closeSidebar}>
 						<FaTimes></FaTimes>
 					</button>
 				</div>
-				<div className="links">
-					<h5> Features</h5>
-					<h5>Pricing</h5>
-					<h5>Resources</h5>
-					<hr />
-					<h5>Login</h5>
-					<button>Sign Up</button>
+				<div className="sidebar">
+					<div className="links">
+						<h5> Home</h5>
+						<h5>About</h5>
+						<h5>Contact</h5>
+						<h5>Carees</h5>
+						<h5>Blogs</h5>
+					</div>
 				</div>
 			</aside>
 		</SidebarContainer>
@@ -30,23 +35,14 @@ const Sidebar = () => {
 };
 
 const SidebarContainer = styled.div`
-	text-align: center;
-
-	.sidebar-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1rem 1.5rem;
-		margin-top: -1rem;
-	}
 	.close-btn {
-		font-size: 2rem;
+		font-size: 2.4rem;
+		font-weight: 200;
 		background: transparent;
 		border-color: transparent;
-		color: white;
+		color: var(--Grayish-Blue);
 		transition: var(--transition);
 		cursor: pointer;
-		margin-top: 0.2rem;
 	}
 	.close-btn:hover {
 		color: var(--clr-red-light);
@@ -63,49 +59,58 @@ const SidebarContainer = styled.div`
 
 		h5 {
 			font-size: 2rem;
-		}
-		button {
-			width: 80%;
-			justify-self: center;
-			padding: 1rem;
-			border: none;
-			background-color: hsl(180, 66%, 49%);
-			color: white;
-			font-size: 1.7rem;
-			border-radius: 2rem;
-			font-weight: 700;
-			transition: var(--transition);
-			text-align: center;
-
-			&:hover {
-				color: hsl(180, 66%, 49%);
-				background: white;
-			}
+			color: black;
+			font-weight: 400;
 		}
 	}
 
-	.sidebar {
+	.sidebar-header {
+		background-color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 6rem;
+		padding: 3rem;
+	}
+	/* sidebar */
+	.sidebar-wrapper {
 		position: fixed;
-		top: 10rem;
-		left: 1.3rem;
-		width: 90vw;
-		height: 65%;
-		background: hsl(257, 27%, 26%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		visibility: hidden;
+		z-index: -1;
 		transition: var(--transition);
-		transform: scale(0);
-		z-index: -100;
-		border-radius: 20px;
+		transform: translateX(-100%);
+		background: rgba(0, 0, 0, 0.5);
+		background: linear-gradient(
+			180deg,
+			hsla(233, 26%, 24%, 0.89),
+			hsla(0, 0%, 100%, 0.3)
+		);
 	}
-	.show-sidebar {
-		transform: scale(1);
-		z-index: 999;
-		right: 30%;
+	.sidebar-wrapper.show {
+		visibility: visible;
+		z-index: 2;
+		transform: translateX(0);
 	}
-
-	@media screen and (min-width: 992px) {
-		.sidebar {
-			display: none;
-		}
+	.sidebar {
+		width: 90vw;
+		height: 50vh;
+		max-width: var(--fixed-width);
+		background: var(--clr-white);
+		border-radius: var(--radius);
+		box-shadow: var(--dark-shadow);
+		position: relative;
+		margin-inline: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transform: translateY(-30%);
 	}
 `;
 

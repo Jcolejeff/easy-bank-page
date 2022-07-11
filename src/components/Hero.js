@@ -48,7 +48,11 @@ const Wrapper = styled.header`
 				line-height: 1.8;
 			}
 			button {
-				background: hsl(180, 66%, 49%);
+				background: linear-gradient(
+					90deg,
+					hsla(136, 65%, 51%, 0.89),
+					rgba(43, 183, 218, 0.932)
+				);
 				color: var(--clr-white);
 				border: none;
 				padding: 1.5rem;

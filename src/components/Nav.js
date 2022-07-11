@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import useGlobalContext from "../context";
-
+import logo from "../images/logo.svg";
 const Nav = () => {
 	const { openSidebar } = useGlobalContext();
 
@@ -10,23 +10,24 @@ const Nav = () => {
 		<NavContainer>
 			<div className="nav-center">
 				<div className="nav-header">
-					<img src="" alt="logo" />
-					<div className="nav-links">
-						<ul>
-							<li> features </li>
-							<li>Pricing</li>
-							<li> Resources</li>
-						</ul>
-					</div>
+					<img src={logo} alt="logo" />
 
 					<button onClick={openSidebar} type="button" className="nav-toggle">
 						<FaBars></FaBars>
 					</button>
 				</div>
+				<div className="nav-links">
+					<ul>
+						<li> Home </li>
+						<li>About</li>
+						<li> Contact</li>
+						<li> Careers</li>
+						<li> Blog</li>
+					</ul>
+				</div>
 				<div>
 					<div className="login-links">
-						<a> login</a>
-						<button className="sign-in">sign up</button>
+						<button className="sign-in">Request Invite</button>
 					</div>
 				</div>
 			</div>
@@ -39,7 +40,8 @@ const NavContainer = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 4rem;
+	padding: 3rem;
+	background-color: #fff;
 	.nav-center {
 		width: 90vw;
 		margin: 0 auto;
@@ -74,7 +76,11 @@ const NavContainer = styled.nav`
 	@media (min-width: 992px) {
 		padding-inline: 7rem;
 		.sign-in {
-			background-color: hsl(180, 66%, 49%);
+			background: linear-gradient(
+				90deg,
+				hsla(136, 65%, 51%, 0.89),
+				rgba(43, 183, 218, 0.932)
+			);
 			border: none;
 			padding-inline: 2rem;
 			padding-block: 1rem;
@@ -112,9 +118,9 @@ const NavContainer = styled.nav`
 				font-size: 1.1rem;
 				text-transform: capitalize;
 				letter-spacing: var(--spacing);
-				padding: 0.5rem;
+				padding: 1rem;
 				&:hover {
-					border-bottom: 2px solid var(--clr-primary-7);
+					border-bottom: 2px solid var(--Lime-Green);
 				}
 			}
 		}
