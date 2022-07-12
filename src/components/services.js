@@ -40,11 +40,11 @@ const Wrapper = styled.section`
 	header {
 		margin-inline: auto;
 		width: 90%;
+		text-align: center;
 		p {
 			font-size: 1.5rem;
 			color: hsl(0, 0%, 55%);
 			font-weight: 500;
-			width: 50%;
 		}
 	}
 
@@ -54,7 +54,7 @@ const Wrapper = styled.section`
 		gap: 2rem;
 	}
 	.service {
-		text-align: left;
+		text-align: center;
 		padding: 2.5rem 2rem;
 		border-radius: var(--radius);
 		margin-inline: auto;
@@ -64,27 +64,28 @@ const Wrapper = styled.section`
 			font-size: 1.7rem;
 			font-weight: 700;
 			color: hsl(260, 8%, 14%);
+			margin-block-start: 2rem;
 		}
 		p {
-			color: hsl(0, 0%, 75%);
+			color: hsl(0, 0%, 50%);
 			font-size: 1.3rem;
 			padding-block-start: 1.5rem;
-		}
-		.image-container {
-			border-radius: 80%;
-			padding-block: 1.8rem;
-			padding-inline: 0.8rem;
-			width: 50%;
-			margin-block-start: 1rem;
-			margin-block-end: 3rem;
-
-			img {
-				width: 60%;
-			}
+			font-weight: 400;
 		}
 	}
 
 	@media (min-width: 65rem) {
+		header {
+			margin-inline: auto;
+			width: 90%;
+			text-align: left;
+			p {
+				width: 50%;
+			}
+		}
+		.service {
+			text-align: left;
+		}
 		.services-center {
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 			width: 95%;

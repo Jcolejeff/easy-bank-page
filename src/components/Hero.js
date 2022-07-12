@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import hero from "../images/image-mockups.png";
+import bg from "../images/bg-intro-desktop.svg";
+import bg2 from "../images/bg-intro-mobile.svg";
 
 const Hero = () => {
 	return (
@@ -33,6 +35,9 @@ const Wrapper = styled.header`
 	align-items: center;
 
 	overflow: hidden;
+	.image-container {
+		background: url(${bg2}) top left/contain no-repeat;
+	}
 	.hero {
 		text-align: center;
 
@@ -47,7 +52,7 @@ const Wrapper = styled.header`
 			margin-inline: auto;
 			text-align: center;
 			width: 90%;
-			margin-block-start: -10rem;
+			margin-block-start: -2rem;
 			padding-block-end: 10rem;
 			h1 {
 				font-weight: 400;
@@ -75,6 +80,7 @@ const Wrapper = styled.header`
 				transition: var(--transition);
 				&:hover {
 					opacity: 0.5;
+					cursor: pointer;
 				}
 			}
 		}
@@ -87,6 +93,9 @@ const Wrapper = styled.header`
 
 			& > * {
 				flex: 1;
+			}
+			.image-container {
+				background: url(${bg}) top left/contain no-repeat;
 			}
 			.desc {
 				margin: 0;

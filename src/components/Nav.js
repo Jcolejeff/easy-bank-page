@@ -90,6 +90,7 @@ const NavContainer = styled.nav`
 			transition: var(--transition);
 			&:hover {
 				opacity: 0.5;
+				cursor: pointer;
 			}
 		}
 		.login-links {
@@ -125,6 +126,7 @@ const NavContainer = styled.nav`
 				padding: 1rem;
 				&:hover {
 					border-bottom: 2px solid var(--Lime-Green);
+					cursor: pointer;
 				}
 			}
 		}

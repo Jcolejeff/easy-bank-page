@@ -8,17 +8,17 @@ const Articles = () => {
 				<h1> Latest Articles </h1>
 			</header>
 
-			<div className="services-center">
-				{articles.map((service) => {
-					const { id, image, title, text, author } = service;
+			<div className="articles-center">
+				{articles.map((article) => {
+					const { id, image, title, text, author } = article;
 
 					return (
-						<article key={id} className="service">
+						<article key={id} className="article">
 							<div className="image-container">
 								<img src={image} alt="" className="icon" />
 							</div>
 							<div className="text">
-								<p>{author}</p>
+								<p>By {author}</p>
 								{/* <span className="icon">{icon}</span> */}
 								<h4>{title}</h4>
 								<p>{text}</p>
@@ -37,25 +37,25 @@ const Wrapper = styled.section`
 	padding-block: 5rem;
 
 	header {
-		margin: 10rem;
 		margin-inline: auto;
-
+		margin-block-end: 4rem;
+		text-align: center;
 		width: 90%;
 	}
 
-	.services-center {
+	.articles-center {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
+		gap: 3rem;
 	}
-	.service {
+	.article {
 		background: var(--clr-white);
 		text-align: left;
 		display: grid;
 		grid-template-rows: 1fr 1fr;
 		border-radius: var(--radius);
 		margin-inline: auto;
-		margin-block-start: 1rem;
+
 		width: 90%;
 		box-shadow: var(--light-shadow);
 		.text {
@@ -71,6 +71,7 @@ const Wrapper = styled.section`
 				transition: var(--transition);
 				&:hover {
 					color: hsla(136, 55%, 65%, 1);
+					cursor: pointer;
 				}
 			}
 		}
@@ -82,7 +83,11 @@ const Wrapper = styled.section`
 	}
 
 	@media (min-width: 65rem) {
-		.services-center {
+		header {
+			text-align: left;
+		}
+
+		.articles-center {
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 			width: 95%;
 			margin-inline: auto;
