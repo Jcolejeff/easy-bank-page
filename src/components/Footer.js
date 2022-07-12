@@ -32,7 +32,7 @@ const Footer = () => {
 					<h5>Privacy Policy</h5>
 				</div>
 				<div>
-					<button>Requeust invite</button>
+					<button>Request invite</button>
 					<p>© Easybank. All Rights Reserved</p>
 				</div>
 			</section>

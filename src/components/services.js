@@ -75,6 +75,7 @@ const Wrapper = styled.section`
 	}
 
 	@media (min-width: 65rem) {
+		transform: translateY(-20%);
 		header {
 			margin-inline: auto;
 			width: 90%;

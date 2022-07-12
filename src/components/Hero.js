@@ -35,6 +35,7 @@ const Wrapper = styled.header`
 	align-items: center;
 
 	overflow: hidden;
+
 	.image-container {
 		background: url(${bg2}) top left/contain no-repeat;
 	}
@@ -95,7 +96,7 @@ const Wrapper = styled.header`
 				flex: 1;
 			}
 			.image-container {
-				background: url(${bg}) top left/contain no-repeat;
+				background: url(${bg}) left top/contain no-repeat;
 			}
 			.desc {
 				margin: 0;

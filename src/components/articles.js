@@ -83,6 +83,7 @@ const Wrapper = styled.section`
 	}
 
 	@media (min-width: 65rem) {
+		padding-block-start: 0;
 		header {
 			text-align: left;
 		}
