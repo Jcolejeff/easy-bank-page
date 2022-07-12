@@ -10,39 +10,29 @@ const Footer = () => {
 	return (
 		<Wrapper>
 			<section className="footer-links">
-				<h1>Shortly</h1>
+				<div>
+					<h1>Shortly</h1>
+					<div className="social-links">
+						<FaFacebook />
+						<FaTwitter />
+						<FaInstagram />
+						<FaPinterest />
+					</div>
+				</div>
 
 				<div>
-					<h5>Features</h5>
-					<ul>
-						<li> Link Shortening</li>
-						<li>Branded Links </li>
-						<li> Analytics</li>
-					</ul>
+					<h5>About</h5>
+					<h5>Contact</h5>
+					<h5>Blog</h5>
 				</div>
 				<div>
-					<h5>Resources</h5>
-					<ul>
-						<li> Blog</li>
-						<li>Developers</li>
-						<li> Support</li>
-					</ul>
+					<h5>Career</h5>
+					<h5>Support</h5>
+					<h5>Privacy Policy</h5>
 				</div>
 				<div>
-					<h5>Company</h5>
-					<ul>
-						<li> About</li>
-						<li> Our Team</li>
-
-						<li> Careers</li>
-						<li> Contact</li>
-					</ul>
-				</div>
-				<div className="social-links">
-					<FaFacebook />
-					<FaTwitter />
-					<FaInstagram />
-					<FaPinterest />
+					<h5>Requeust invite</h5>
+					<p>© Easybank. All Rights Reserved</p>
 				</div>
 			</section>
 		</Wrapper>
@@ -83,6 +73,10 @@ const Wrapper = styled.footer`
 		svg {
 			font-size: 2.5rem;
 			color: var(--clr-white);
+			transition: var(--transition);
+			&:hover {
+				color: hsla(136, 65%, 61%, 1);
+			}
 		}
 	}
 `;

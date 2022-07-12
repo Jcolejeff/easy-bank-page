@@ -1,22 +1,23 @@
 import styled from "styled-components";
+import hero from "../images/image-mockups.png";
 
 const Hero = () => {
 	return (
 		<Wrapper>
 			<section className="hero">
-				<div>
+				<div className="image-container">
 					<picture>
-						<source media="(min-width:650px)" srcSet="" />
-						<img src="" alt="hero" />
+						<img src={hero} alt="hero" />
 					</picture>
 				</div>
 				<div className="desc">
-					<h1>More than just shorter links</h1>
+					<h1> Next generation digital banking</h1>
 					<p>
-						Build your brand’s recognition and get detailed insights on how your
-						links are performing.
+						Take your financial life online. Your Easybank account will be a
+						one-stop-shop for spending, saving, budgeting, investing, and much
+						more.
 					</p>
-					<button>Get Started</button>
+					<button>Request Invite</button>
 				</div>
 			</section>
 		</Wrapper>
@@ -30,16 +31,27 @@ const Wrapper = styled.header`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-inline: 8rem;
-	padding-block-end: 10rem;
 
+	overflow: hidden;
 	.hero {
+		text-align: center;
+
+		picture {
+			height: 40vh;
+			img {
+				width: 90%;
+				transform: translateY(-30%);
+			}
+		}
 		.desc {
 			margin-inline: auto;
 			text-align: center;
+			width: 90%;
+			margin-block-start: -10rem;
+			padding-block-end: 10rem;
 			h1 {
-				font-weight: 700;
-				font-size: 4rem;
+				font-weight: 400;
+				font-size: 3.5rem;
 			}
 			p {
 				font-size: 1.8rem;
@@ -60,12 +72,19 @@ const Wrapper = styled.header`
 				font-weight: 700;
 				padding-inline: 4.5rem;
 				border-radius: 30px;
+				transition: var(--transition);
+				&:hover {
+					opacity: 0.5;
+				}
 			}
 		}
 		@media (min-width: 65rem) {
 			display: flex;
 			flex-direction: row-reverse;
+			margin-inline: 8rem;
+			width: 80%;
 			gap: 3rem;
+
 			& > * {
 				flex: 1;
 			}
@@ -73,16 +92,18 @@ const Wrapper = styled.header`
 				margin: 0;
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
+				padding-block-start: 13rem;
+
 				align-items: flex-start;
 				text-align: left;
 				h1 {
-					font-size: 6rem;
+					font-size: 4rem;
 				}
 			}
 			picture {
 				img {
-					width: 110%;
+					width: 120%;
+					transform: translateY(-10%);
 				}
 			}
 		}

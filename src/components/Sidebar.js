@@ -94,7 +94,7 @@ const SidebarContainer = styled.div`
 	}
 	.sidebar-wrapper.show {
 		visibility: visible;
-		z-index: 2;
+		z-index: 200;
 		transform: translateX(0);
 	}
 	.sidebar {

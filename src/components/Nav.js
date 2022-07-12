@@ -87,6 +87,10 @@ const NavContainer = styled.nav`
 			border-radius: 2rem;
 			color: white;
 			font-weight: 900;
+			transition: var(--transition);
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 		.login-links {
 			display: flex;
